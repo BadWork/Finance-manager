@@ -1,3 +1,13 @@
-.div1{
-
+li, ul{
+	list-style: none;
+	padding-left: 0;
+}
+.main-lastPayments li{
+	padding-bottom: 10px;
+}
+.main-lastPayments li span{
+	padding-left: 3px;
+}
+.main-addPayment div{
+	padding-bottom: 10px;
 }

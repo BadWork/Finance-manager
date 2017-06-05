@@ -10,7 +10,6 @@
 
 	<!-- Bootstrap -->
 	<link href="css/bootstrap.css" rel="stylesheet">
-	<link href="/lib/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="/lib/calendar/css/bootstrap-datepicker3.standalone.css">
 	<link rel="stylesheet" href="/css/style.css">
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -34,33 +33,71 @@
 				 <span class="icon-bar"></span>
 				 <span class="icon-bar"></span>
 			 </button>
-					<a class="navbar-brand" href="#">BadWork</a>
+					<a class="navbar-brand balance" href="#">BadWork</a>
 				</div>
 
 				<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<li><a href="#"><i class="fa fa-cog" aria-hidden="true"></i>
+						<li><a href="#"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
 					 Настройки</a></li>
 					</ul>
 				</div>
 			</div>
 		</nav>
 	</header>
-	<div class="container-fluid">
-		<div class="datepicker"></div>
+	<div class="container">
+		
+		<div class="main-addPayment col-lg-7 col-sm-7 col-xs-12">
+			<div class="input-group">
+				<input type="tel" class="input-addPayment-sum form-control" placeholder="Сумма">
+				<span class="input-group-addon">BYN</span>
+			</div>
+			<div class="input-group col-xs-12">
+				<input type="text" class="input-addPayment-category form-control" placeholder="Категория">
+			</div>
+			<div class="input-addPayment-date input-group date" data-provide="datepicker">
+				<input type="text" class="form-control" placeholder="Дата">
+				<div class="input-group-addon">
+					<span class="glyphicon glyphicon-calendar"></span>
+				</div>
+			</div>
+			<div class="btn-type btn-group btn-group-justified" data-toggle="buttons">
+				<label class="btn btn-default active">
+					<input class="" type="radio" name="quality[25]" value="-" /> Расход
+				</label> 
+				<label class="btn btn-default">
+					<input type="radio" name="quality[25]" value="+" /> Доход
+				</label> 
+
+			</div>
+			<div class="form-group">
+				<label for="comment">Комментарий:</label>
+				<textarea class="input-description form-control" rows="3" id="comment"></textarea>
+			</div>
+			<button type="button" class="btn btn-addPayment btn-danger center-block">Добавить</button>
+		</div>
+		
+		<div class="main-lastPayments col-lg-5 col-sm-5 col-xs-12">
+			<div class="main-lastPayments-title"><span>Последние расходы</span></div>
+			<ul class="lastPayments-list">
+			</ul>
+		</div>
+
 	</div>
 
 	<script src="/js/jquery-3.2.1.min.js"></script>
 	<script src="/js/bootstrap.js"></script>
 	<script src="lib/calendar/js/bootstrap-datepicker.js"></script>
 	<script src="lib/calendar/locales/bootstrap-datepicker.ru.min.js"></script>
-		<script type="text/javascript">
-		$('.datepicker').datepicker({
+	<script type="text/javascript">
+		$('.date').datepicker({
 			language: "ru",
 			maxViewMode: 2,
-			todayHighlight: true
+			todayHighlight: true,
+			autoclose: true
 		});
 	</script>
+	<script src="js/script.js"></script>
 </body>
 
 </html>
